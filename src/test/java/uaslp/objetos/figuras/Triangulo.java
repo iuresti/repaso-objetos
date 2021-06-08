@@ -28,7 +28,11 @@ public class Triangulo implements Figura {
 
     }
 
-    public double getArea() {
+    public double getArea() throws DatoFaltanteException {
+        if(base<=0)
+            throw new BaseNoProvistaException();
+        if(altura<=0)
+            throw new AlturaNoProvistaException();
         area = (base*altura)/2;
         return area;
     }

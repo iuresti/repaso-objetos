@@ -6,13 +6,23 @@ public class PoligonoRegular implements Figura{
     private double area;
     private static final String name = "Poligono Regular";
     public PoligonoRegular(int numeroDeLados) {
-        this.numeroDeLados = numeroDeLados;
+        if(numeroDeLados<5)
+        {
+            throw new NumeroInvalidoDeLados("Número de lados válido a partir de 5");
+        }else {
+            this.numeroDeLados = numeroDeLados;
+        }
 
     }
 
     public PoligonoRegular(int numeroDeLados, double lado) {
-        this.numeroDeLados = numeroDeLados;
-        this.lado = lado;
+        if(numeroDeLados<5)
+        {
+            throw new NumeroInvalidoDeLados("Número de lados válido a partir de 5");
+        }else {
+            this.numeroDeLados=numeroDeLados;
+            this.lado=lado;
+        }
     }
 
     public void setLado(double lado) {
